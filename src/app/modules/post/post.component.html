@@ -1,11 +1,15 @@
-<p>post works!</p>
 <h3>{{title}}</h3>
+<!--
+  子组件的数据通过属性[entity]传入，在子组件@input绑定entity属性
+  子组件使用@output()装饰器 输出属性remove
+  (remove):绑定remove事件响应
+  $event：接收子组件发射的参数
+ -->
 <ul>
-  <li *ngFor="let entity of entities; index as i">
-    <h4 [title] = 'entity.title' [textContent] = "entity.title"></h4>
-    <p *ngIf="entity.body">{{ entity.body}}</p>
-    <p>
-      <button (click) = "removeItem(i)">Remove</button>
-    </p>
-  </li>
+  <app-post-item
+    *ngFor="let entity of entities"
+    [entity] = "entity"
+    (remove) = "removeItem($event)"
+    >
+  </app-post-item>
 </ul>
