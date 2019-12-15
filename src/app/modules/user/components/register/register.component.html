@@ -1,1 +1,15 @@
-<p>register works!</p>
+<p>user register</p>
+<form [formGroup] = 'registerForm' (ngSubmit)="onSubmit()">
+<label for="username">
+  <p>username:</p>
+  <input type="text" formControlName = "username">
+</label>
+<label>
+  <p>password:</p>
+  <input type="password" formControlName = "password">
+</label>
+<p>
+<button type="submit">Submit</button>
+</p>
+<pre>Status: {{ registerForm.status }}</pre>
+</form>
