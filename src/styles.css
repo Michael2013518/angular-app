@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+.container {
+  padding: 32px;
+}
+.title {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+.list__item {
+  border-bottom: 1px solid #eee;
+  padding: 16px;
+}
+.selected .list__item {
+  background: #f8f8f8;
+}
+.menu_link {
+  color: blue;
+  margin-left: 20px;
+  text-decoration: underline;
+}
+/* form */
+input[type='text'],
+input[type='password'] {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: bold;
+}
+button[type='submit'] {
+  border: none;
+  background: #333;
+  color: #fff;
+  padding: 10px 24px;
+}
+a.active {
+  color: #000;
+}

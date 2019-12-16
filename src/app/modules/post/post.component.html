@@ -5,11 +5,12 @@
   (remove):绑定remove事件响应
   $event：接收子组件发射的参数
  -->
-<ul>
+<div class="item-list">
   <app-post-item
     *ngFor="let entity of entities"
     [entity] = "entity"
     (remove) = "removeItem($event)"
+    [class.selected] = "entity.id === selectId"
     >
   </app-post-item>
-</ul>
+</div>
