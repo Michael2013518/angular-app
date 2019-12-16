@@ -1,0 +1,10 @@
+<header>
+  <h1> <a [routerLink]="['']">{{ title }}</a></h1>
+  <nav>
+    <a [routerLink]="['/posts']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Posts</a>
+  </nav>
+  <nav>
+    <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+  </nav>
+</header>
+
