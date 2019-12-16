@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../models/post.model';
 import { posts } from '../../posts';
 import { PostService } from '../../../posts/services/post.service';
@@ -12,7 +12,7 @@ import { PostService } from '../../../posts/services/post.service';
 export class PostDetailsComponent implements OnInit {
   entity: Post;
   // ActivatedRoute 包括路由参数相关信息
-  constructor(private route: ActivatedRoute, private postService: PostService) { }
+  constructor(private route: ActivatedRoute, private postService: PostService, private router: Router) { }
 
   ngOnInit() {
     console.log(this.route);
@@ -21,6 +21,10 @@ export class PostDetailsComponent implements OnInit {
       console.log(postId);
       this.entity = this.postService.show(postId);
     });
+  }
+  gotoPosts(entity: Post) {
+    console.log('back');
+    this.router.navigate(['/posts', { id: entity.id }]);
   }
 
 }
