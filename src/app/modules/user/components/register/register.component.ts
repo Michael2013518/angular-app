@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +13,7 @@ export class RegisterComponent implements OnInit {
   // });
   registerForm = this.formBuilder.group({
     username: ['', Validators.required],
-    password: ['',[Validators.required, Validators.minLength(6)]]
+    password: ['', [Validators.required, Validators.minLength(6)]]
   })
   constructor(private formBuilder: FormBuilder) { }
 
