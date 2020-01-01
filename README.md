@@ -32,4 +32,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. npm ;
 3. npm install @angular/cli -g [@angular/cli@8.3.20]
 4. ng new angular-app [select router, css as default];
-5. npm run start or ng serve
+5. npm run start or ng serve;
+6. install Prettier for vs code;
+7. install git Angular Essentials
+8. Angular constructor
+src
+    - main.ts  /应用的入口文件
+      -- AppModule /应用的root模块
+
+9. Input: 父组件传递数据给子组件
+10. Output: 父组件监听在子组件上事件
+11. Routes: app-routing.module.ts
+12. 带参数的路由
+13. routerLink
+14. 获取路由参数的值(paramMap)
+15. services: 应用的操作方法
+16. ng generate module modules/post/post-routing --module post --flat /在post模块下面生成post-routing路由放在module post下面
+17. ng generate module modules/demo --routing --module app /生成demo模块以及对应的路由模块 放在app下面
+

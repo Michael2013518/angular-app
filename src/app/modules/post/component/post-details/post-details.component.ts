@@ -15,11 +15,14 @@ export class PostDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private postService: PostService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.route);
-    this.route.paramMap.subscribe(params => {
-      const postId = +params.get('id');
-      console.log(postId);
-      this.entity = this.postService.show(postId);
+    // console.log(this.route);
+    // this.route.paramMap.subscribe(params => {
+    //   const postId = +params.get('id');
+    //   console.log(postId);
+    //   this.entity = this.postService.show(postId);
+    // });
+    this.route.data.subscribe((data: { entity: Post}) => {
+      this.entity = data.entity;
     });
   }
   gotoPosts(entity: Post) {
