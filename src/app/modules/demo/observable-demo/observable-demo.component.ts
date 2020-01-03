@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, of, Subscription, interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of, Subscription, interval, pipe } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 @Component({
   selector: 'app-observable-demo',
   templateUrl: './observable-demo.component.html',
@@ -14,13 +14,24 @@ export class ObservableDemoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // this.demoObservable = of('hello', 'hola', '你好');
+    /*
     const someNumbers = interval(1000);
-    const transformValue = map(value => `# ${ value }`);
+    const transformValue = pipe(
+      filter((value: number) => value % 2 !== 0),
+      map(value => `# ${ value }`)
+    );
     this.demoObservable = transformValue(someNumbers);
+    */
+   this.demoObservable = interval(1000).pipe(
+    filter((value: number) => value % 2 !== 0),
+    map(value => `# ${ value }`)
+  );
   }
   ngOnDestroy() {
-    console.log('ngOnDestroy: unsubscrible demo observable');
-    this.demoSubscription.unsubscribe();
+    if (this.demoSubscription) {
+      console.log('ngOnDestroy: unsubscrible demo observable');
+      this.demoSubscription.unsubscribe();
+    }
   }
   onClick() {
     const observer = {
@@ -31,6 +42,10 @@ export class ObservableDemoComponent implements OnInit, OnDestroy {
     this.demoSubscription = this.demoObservable.subscribe(observer);
   }
   unsubscrible() {
-    this.demoSubscription.unsubscribe();
+    if (this.demoSubscription) {
+      this.demoSubscription.unsubscribe();
+    } else {
+      console.log('no subscription');
+    }
   }
 }
