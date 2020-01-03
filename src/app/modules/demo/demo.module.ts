@@ -6,13 +6,15 @@ import { DemoComponent } from './demo.component';
 import { ChildRoutesComponent } from './child-routes/child-routes.component';
 import { LoginComponent } from './login/login.component';
 import { AdminModule } from './admin/admin.module';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 
 @NgModule({
   declarations: [
     DemoComponent,
     ChildRoutesComponent,
-    LoginComponent
+    LoginComponent,
+    ObservableDemoComponent
   ],
   imports: [
     CommonModule,
