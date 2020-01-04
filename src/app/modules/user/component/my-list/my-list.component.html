@@ -1,0 +1,7 @@
+<h3 class="title">My List</h3>
+<div *ngFor="let entity of entities">
+  <h4>{{ entity.title }}</h4>
+  <img [src]="entity.image" [alt]="entity.title">
+  <p>{{ entity.body }}</p>
+  <p><button (click)="removeItemFromList(entity.id)">删除</button></p>
+</div>

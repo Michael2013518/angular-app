@@ -1,0 +1,22 @@
+<form [formGroup]="postEditForm" (ngSubmit)="onSubmit()">
+  <label>
+    <p>标题</p>
+    <input type="text" formControlName="title">
+  </label>
+  <label>
+    <p>图片</p>
+    <input type="text" formControlName="image">
+  </label>
+  <label>
+    <p>内容</p>
+    <textarea class="area" formControlName="body"></textarea>
+  </label>
+  <p><button type="submit">更新</button></p>
+  <p>
+    <strong>
+      <small>
+        <a routerLink="../">返回</a>
+      </small>
+    </strong>
+  </p>
+</form>
