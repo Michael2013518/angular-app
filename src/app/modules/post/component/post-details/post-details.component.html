@@ -3,3 +3,10 @@
 <img [src]="entity.image" [alt]="entity.title">
 <p *ngIf="entity.body">{{ entity.body }}</p>
 <button (click) = "gotoPosts(entity)">Back</button>
+<p>
+  <strong>
+    <small>
+      <a routerLink="./edit">编辑</a>
+    </small>
+  </strong>
+</p>
