@@ -49,4 +49,5 @@ src
 15. services: 应用的操作方法
 16. ng generate module modules/post/post-routing --module post --flat /在post模块下面生成post-routing路由放在module post下面
 17. ng generate module modules/demo --routing --module app /生成demo模块以及对应的路由模块 放在app下面
+18. ng generate module modules/demo/admin --routing --module demo
 
